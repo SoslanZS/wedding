@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-label="Пара среди гортензий">
+	<defs>
+		<linearGradient id="c4bg" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#f9fbff"/>
+			<stop offset="1" stop-color="#dfe8f5"/>
+		</linearGradient>
+	</defs>
+	<rect width="1200" height="1500" fill="url(#c4bg)"/>
+	<g fill="#9fb4c0" opacity="0.7">
+		<ellipse cx="180" cy="1200" rx="220" ry="160"/>
+		<ellipse cx="1040" cy="1160" rx="240" ry="180"/>
+	</g>
+	<g>
+		<g fill="#cbd9ec" opacity="0.9">
+			<circle cx="150" cy="1120" r="70"/>
+			<circle cx="230" cy="1080" r="64"/>
+			<circle cx="120" cy="1040" r="58"/>
+			<circle cx="1050" cy="1080" r="72"/>
+			<circle cx="980" cy="1040" r="60"/>
+			<circle cx="1090" cy="1000" r="54"/>
+		</g>
+		<g fill="#dbe6f6" opacity="0.85">
+			<circle cx="210" cy="1130" r="40"/>
+			<circle cx="1010" cy="1110" r="40"/>
+		</g>
+	</g>
+	<g fill="#8698b4">
+		<path d="M430 1180c0-130-24-214-24-304 0-76 44-130 106-130s106 54 106 132c0 88-26 172-26 302Z"/>
+		<circle cx="512" cy="600" r="56"/>
+		<path d="M650 1180c0-120-18-216-14-308 4-80 50-134 112-134 54 0 92 48 92 122 0 90-30 178-26 320Z"/>
+		<circle cx="742" cy="620" r="52"/>
+	</g>
+	<path d="M566 800c46 32 98 36 150 10" stroke="#8698b4" stroke-width="17" stroke-linecap="round" fill="none"/>
+</svg>

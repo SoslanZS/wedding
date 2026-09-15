@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-label="Пара в поле на мягком голубом свету">
+	<defs>
+		<linearGradient id="c1sky" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#f6faff"/>
+			<stop offset="0.5" stop-color="#e7eefb"/>
+			<stop offset="1" stop-color="#d3e0f2"/>
+		</linearGradient>
+		<radialGradient id="c1sun" cx="0.5" cy="0.5" r="0.5">
+			<stop offset="0" stop-color="#ffffff"/>
+			<stop offset="0.55" stop-color="#e6eefb"/>
+			<stop offset="1" stop-color="#e6eefb" stop-opacity="0"/>
+		</radialGradient>
+		<linearGradient id="c1field" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#cbd9ec"/>
+			<stop offset="1" stop-color="#b6c8e0"/>
+		</linearGradient>
+	</defs>
+
+	<rect width="1200" height="1500" fill="url(#c1sky)"/>
+	<circle cx="820" cy="470" r="360" fill="url(#c1sun)"/>
+	<circle cx="820" cy="470" r="120" fill="#ffffff"/>
+
+	<g fill="#dbe6f6" opacity="0.7">
+		<circle cx="230" cy="300" r="70"/><circle cx="1010" cy="240" r="90"/>
+		<circle cx="1060" cy="620" r="54"/><circle cx="180" cy="700" r="44"/>
+	</g>
+
+	<path d="M0 980c150-36 300-30 460 4 200 42 340 20 500-12 120-24 200-18 240 0v528H0Z" fill="url(#c1field)"/>
+	<path d="M0 1080c180 30 320 24 480 6 200-22 360 8 520 26 90 10 140 4 200-10v372H0Z" fill="#a9bcd8"/>
+
+	<g fill="#8698b4">
+		<path d="M470 1090c0-120-22-198-22-284 0-72 42-124 100-124s100 52 100 128c0 84-22 164-22 280Z"/>
+		<circle cx="548" cy="600" r="52"/>
+		<path d="M650 1096c0-112-18-204-14-292 4-76 48-128 106-128 52 0 90 46 90 118 0 86-28 172-24 302Z"/>
+		<circle cx="742" cy="616" r="48"/>
+	</g>
+	<path d="M566 800c46 28 96 30 146 6" stroke="#8698b4" stroke-width="16" stroke-linecap="round" fill="none"/>
+
+	<g stroke="#c4d3e8" stroke-width="4" stroke-linecap="round" opacity="0.75">
+		<path d="M120 1120v-70M180 1140v-90M1040 1120v-80M1100 1150v-70"/>
+	</g>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+	<defs>
+		<g id="dm" fill="none" stroke-linecap="round" stroke-linejoin="round">
+			<!-- interlocking ogee lattice (seamless in both axes) -->
+			<path d="M60 0C95 16 95 44 60 60C25 44 25 16 60 0Z"/>
+			<path d="M60 60C95 76 95 104 60 120C25 104 25 76 60 60Z"/>
+			<path d="M0 60C16 25 44 25 60 60C44 95 16 95 0 60Z"/>
+			<path d="M60 60C76 25 104 25 120 60C104 95 76 95 60 60Z"/>
+			<!-- little fleurons at the lattice nodes -->
+			<g>
+				<path d="M60 53C63 53 66 56 66 60C66 64 63 67 60 67C57 67 54 64 54 60C54 56 57 53 60 53Z"/>
+				<path d="M60 0C62 0 64 2 64 4M60 0C58 0 56 2 56 4"/>
+				<path d="M0 60C0 58 2 56 4 56M0 60C0 62 2 64 4 64"/>
+			</g>
+			<circle cx="30" cy="30" r="1.5"/>
+			<circle cx="90" cy="30" r="1.5"/>
+			<circle cx="30" cy="90" r="1.5"/>
+			<circle cx="90" cy="90" r="1.5"/>
+		</g>
+	</defs>
+
+	<!-- tone-on-tone faux emboss on ivory paper -->
+	<use href="#dm" stroke="#ffffff" stroke-opacity="0.32" stroke-width="1.4" transform="translate(-0.6 -0.6)"/>
+	<use href="#dm" stroke="#3a4a64" stroke-opacity="0.05" stroke-width="1.4" transform="translate(0.7 0.8)"/>
+	<use href="#dm" stroke="#9fb4d0" stroke-opacity="0.13" stroke-width="1"/>
+</svg>

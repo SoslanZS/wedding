@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-label="Пара у зимнего окна">
+	<defs>
+		<linearGradient id="c2a" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#f6faff"/>
+			<stop offset="1" stop-color="#e7eefb"/>
+		</linearGradient>
+		<linearGradient id="c2b" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#eef3fc" stop-opacity="0.9"/>
+			<stop offset="1" stop-color="#eef3fc" stop-opacity="0"/>
+		</linearGradient>
+	</defs>
+	<rect width="1200" height="1500" fill="url(#c2a)"/>
+	<rect x="150" y="120" width="900" height="1000" rx="14" fill="#e7eefb"/>
+	<rect x="150" y="120" width="900" height="1000" rx="14" fill="none" stroke="#b3c5df" stroke-width="14"/>
+	<line x1="600" y1="120" x2="600" y2="1120" stroke="#b3c5df" stroke-width="10"/>
+	<line x1="150" y1="620" x2="1050" y2="620" stroke="#b3c5df" stroke-width="10"/>
+	<circle cx="330" cy="360" r="70" fill="#f6faff"/>
+	<path d="M250 200 L900 900 L740 1080 L150 420Z" fill="url(#c2b)"/>
+	<rect y="1120" width="1200" height="380" fill="#dfe8f5"/>
+	<g fill="#7e90ad">
+		<path d="M430 1120c0-120-24-200-24-286 0-72 42-124 100-124s100 52 100 128c0 84-24 164-24 282Z"/>
+		<circle cx="506" cy="612" r="52"/>
+		<path d="M640 1120c0-112-18-204-14-292 4-76 48-128 106-128 52 0 90 46 90 118 0 86-28 172-24 302Z"/>
+		<circle cx="726" cy="628" r="48"/>
+	</g>
+	<path d="M556 800c44 30 92 34 142 10" stroke="#7e90ad" stroke-width="16" stroke-linecap="round" fill="none"/>
+</svg>

@@ -1,0 +1,55 @@
+// ─────────────────────────────────────────────────────────────
+//  Mixins
+// ─────────────────────────────────────────────────────────────
+
+@use "variables" as *;
+
+// Media query — max-width by default (mobile-last overrides)
+@mixin mq($size, $type: max)
+{
+	@if $type == min {
+		@media (min-width: $size) { @content; }
+	}
+	@else {
+		@media (max-width: $size) { @content; }
+	}
+}
+
+// Standard eased transition
+@mixin transition($props: all, $duration: 0.4s, $ease: $ease-out-soft)
+{
+	transition-property: $props;
+	transition-duration: $duration;
+	transition-timing-function: $ease;
+}
+
+// Absolute fill
+@mixin fill
+{
+	position: absolute;
+	inset: 0;
+}
+
+// Centered flex
+@mixin center
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// Respect user's reduced-motion preference
+@mixin reduced-motion
+{
+	@media (prefers-reduced-motion: reduce) { @content; }
+}
+
+// Gold foil text
+@mixin gold-foil
+{
+	background: linear-gradient(100deg, $gold-deep 0%, $gold-light 30%, #f4e3c4 45%, $gold-light 60%, $gold-deep 100%);
+	background-size: 200% auto;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}

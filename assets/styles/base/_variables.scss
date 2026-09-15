@@ -1,0 +1,62 @@
+// ─────────────────────────────────────────────────────────────
+//  Design tokens — wedding invitation
+//  Style: light powder-blue + dusty periwinkle + soft blue-grey.
+//  Everything kept light, low-contrast and soft.
+// ─────────────────────────────────────────────────────────────
+
+// Palette — same hues as before, each lifted toward white for a lighter tone
+$paper:            #f0f5fb;   // powder blue-white background
+$paper-deep:       #e6eef8;   // gently deeper blue-white
+$ink:              #566478;   // soft slate-blue text (never near-black)
+$ink-soft:         #8c99af;   // muted blue-grey text
+$blue:             #9fb5d6;   // dusty blue  (rules / borders)
+$blue-light:       #d0ddee;   // powder blue
+$blue-deep:        #6b86b4;   // steel blue  (eyebrows, headings)
+$blue-ink:         #5b7199;   // deep periwinkle  (script names)
+$hydrangea:        #91a9cf;   // hydrangea blue
+$hydrangea-deep:   #738db6;
+$sage:             #abbdc8;   // soft blue-grey greenery
+$sage-deep:        #8da3b1;
+$seal:             #9bb3ce;   // (legacy)
+$seal-shade:       #7993b4;
+$gold:             #b3c8e0;   // pale silver-blue foil
+$gold-light:       #dbe7f3;
+$gold-deep:        #7993bb;
+$white:            #fdfeff;
+
+// Soft slate accents (gate, plaques)
+$brown:            #8fa3be;
+$brown-deep:       #798faf;
+$brown-soft:       #a3b6cf;
+$cream-card:       #f5f8fd;
+
+// Typography
+$font-script:   'Great Vibes', 'Snell Roundhand', cursive;
+$font-display:  'Cormorant Garamond', 'Times New Roman', serif;
+$font-body:     'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+// Layout
+$content-width: 680px;
+$wide-width:    1120px;
+
+// Breakpoints
+$mobile:   480px;
+$tablet:   768px;
+$laptop:   1024px;
+$desktop:  1280px;
+
+// Motion
+$ease-out-soft:    cubic-bezier(0.22, 1, 0.36, 1);
+$ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+$ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// Elevation — soft, low-contrast cool shadows
+$shadow-card:  0 26px 54px -24px rgba(70, 92, 128, 0.24);
+$shadow-soft:  0 12px 28px -14px rgba(70, 92, 128, 0.18);
+
+// Z-index scale
+$z-decor:     1;
+$z-content:   2;
+$z-petals:   30;
+$z-envelope:  60;
+$z-fireworks: 70;

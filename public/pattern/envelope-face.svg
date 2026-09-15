@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="480" viewBox="0 0 400 480" preserveAspectRatio="none">
+	<defs>
+		<!-- fine paper grain -->
+		<filter id="grain" x="0" y="0" width="100%" height="100%">
+			<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+			<feColorMatrix in="n" type="matrix"
+				values="0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0.7 0"/>
+		</filter>
+		<!-- long directional fibres -->
+		<filter id="fibre" x="0" y="0" width="100%" height="100%">
+			<feTurbulence type="fractalNoise" baseFrequency="0.006 0.08" numOctaves="3" seed="19" result="n"/>
+			<feColorMatrix in="n" type="matrix"
+				values="0 0 0 0 0.42  0 0 0 0 0.47  0 0 0 0 0.58  0 0 0 0.6 0"/>
+		</filter>
+
+		<linearGradient id="face" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#93a8c9"/>
+			<stop offset="0.45" stop-color="#7b91b5"/>
+			<stop offset="0.8" stop-color="#647c9f"/>
+			<stop offset="1" stop-color="#586f92"/>
+		</linearGradient>
+		<radialGradient id="vignette" cx="0.5" cy="0.42" r="0.72">
+			<stop offset="0" stop-color="#2b3a5c" stop-opacity="0"/>
+			<stop offset="0.62" stop-color="#2b3a5c" stop-opacity="0"/>
+			<stop offset="1" stop-color="#26324f" stop-opacity="0.34"/>
+		</radialGradient>
+		<linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+			<stop offset="0.4" stop-color="#ffffff" stop-opacity="0.09"/>
+			<stop offset="0.52" stop-color="#ffffff" stop-opacity="0.02"/>
+			<stop offset="1" stop-color="#243250" stop-opacity="0.16"/>
+		</linearGradient>
+
+		<!-- one damask rosette: filled petals + engraved sprays -->
+		<g id="rose">
+			<path d="M0 0c0-9 6-15 15-15 5 8 4 18-5 24-6 4-10 0-10-9Z"/>
+			<path d="M0 0c9 0 15 6 15 15-8 5-18 4-24-5-4-6 0-10 9-10Z"/>
+			<path d="M0 0c0 9-6 15-15 15-5-8-4-18 5-24 6-4 10 0 10 9Z"/>
+			<path d="M0 0c-9 0-15-6-15-15 8-5 18-4 24 5 4 6 0 10-9 10Z"/>
+			<circle r="5.5"/>
+			<g fill="none" stroke-width="2.6" stroke-linecap="round">
+				<path d="M0 0c15-7 32-3 42 12M0 0c-15 7-32 3-42-12M0 0c7 15 3 32-12 42M0 0c-7-15-3-32 12-42"/>
+			</g>
+		</g>
+		<path id="leaf" d="M0 0c15-6 27-4 35-19C23-24 6-15 0 0Z"/>
+
+		<!-- full tone-on-tone damask panel -->
+		<g id="panel">
+			<use href="#rose" transform="translate(56 54) rotate(-12) scale(1.1)"/>
+			<use href="#rose" transform="translate(212 44) rotate(16) scale(0.92)"/>
+			<use href="#rose" transform="translate(348 74) rotate(-8) scale(1.05)"/>
+			<use href="#rose" transform="translate(132 150) rotate(6) scale(1.28)"/>
+			<use href="#rose" transform="translate(300 176) rotate(-16) scale(1)"/>
+			<use href="#rose" transform="translate(40 214) rotate(20) scale(1.14)"/>
+			<use href="#rose" transform="translate(214 268) rotate(-4) scale(1.34)"/>
+			<use href="#rose" transform="translate(360 296) rotate(12) scale(0.96)"/>
+			<use href="#rose" transform="translate(96 336) rotate(-20) scale(1.08)"/>
+			<use href="#rose" transform="translate(288 388) rotate(8) scale(1.2)"/>
+			<use href="#rose" transform="translate(150 436) rotate(-10) scale(1)"/>
+			<use href="#rose" transform="translate(46 456) rotate(18) scale(0.9)"/>
+
+			<use href="#leaf" transform="translate(120 30) rotate(28)"/>
+			<use href="#leaf" transform="translate(268 96) rotate(-38) scale(1.15)"/>
+			<use href="#leaf" transform="translate(28 132) rotate(64)"/>
+			<use href="#leaf" transform="translate(196 128) rotate(-14) scale(1.2)"/>
+			<use href="#leaf" transform="translate(342 150) rotate(112)"/>
+			<use href="#leaf" transform="translate(88 244) rotate(-52) scale(1.1)"/>
+			<use href="#leaf" transform="translate(268 232) rotate(24) scale(1.25)"/>
+			<use href="#leaf" transform="translate(150 316) rotate(-24) scale(1.3)"/>
+			<use href="#leaf" transform="translate(330 352) rotate(96)"/>
+			<use href="#leaf" transform="translate(40 358) rotate(-70) scale(1.12)"/>
+			<use href="#leaf" transform="translate(220 400) rotate(40)"/>
+			<use href="#leaf" transform="translate(110 452) rotate(-44) scale(1.16)"/>
+
+			<path fill="none" stroke-width="3" stroke-linecap="round" d="
+				M36 96C88 132 118 196 104 272 92 336 120 396 96 468
+				M300 60C258 128 250 208 292 280 320 332 314 404 344 464
+				M182 20C204 88 168 156 200 220 226 274 190 336 214 404
+				M400 200C348 232 322 296 336 368"/>
+		</g>
+	</defs>
+
+	<rect width="400" height="480" fill="url(#face)"/>
+	<rect width="400" height="480" filter="url(#fibre)" opacity="0.5"/>
+	<rect width="400" height="480" filter="url(#grain)" opacity="0.14"/>
+
+	<!-- engraved damask: dark shadow down-right, light highlight up-left, mid body -->
+	<use href="#panel" fill="#313f61" fill-opacity="0.55" stroke="#313f61" stroke-opacity="0.55" transform="translate(1.9 2.4)"/>
+	<use href="#panel" fill="#e2ebf8" fill-opacity="0.5" stroke="#e2ebf8" stroke-opacity="0.5" transform="translate(-1.5 -1.9)"/>
+	<use href="#panel" fill="#5b74a0" fill-opacity="0.58" stroke="#5b74a0" stroke-opacity="0.58"/>
+
+	<rect width="400" height="480" fill="url(#sheen)"/>
+	<rect width="400" height="480" fill="url(#vignette)"/>
+
+	<!-- inset paper edge: thin dark bevel + inner highlight -->
+	<rect x="7" y="7" width="386" height="466" fill="none" stroke="#2b3a5c" stroke-opacity="0.28" stroke-width="2"/>
+	<rect x="9.5" y="9.5" width="381" height="461" fill="none" stroke="#eaf1fb" stroke-opacity="0.22" stroke-width="1"/>
+</svg>

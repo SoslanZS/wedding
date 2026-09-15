@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+	<defs>
+		<g id="fe" fill="none" stroke-linecap="round" stroke-linejoin="round">
+			<!-- centre rose -->
+			<circle cx="120" cy="120" r="10"/>
+			<path d="M120 110c-9 0-16 6-16 15 0 8 7 14 16 14s16-6 16-14c0-9-7-15-16-15Z"/>
+			<path d="M120 96c-16 0-27 10-27 26 0 15 12 25 27 25s27-10 27-25c0-16-11-26-27-26Z"/>
+			<path d="M120 82c-24 0-39 16-39 40 0 22 18 37 39 37s39-15 39-37c0-24-15-40-39-40Z"/>
+			<!-- leaves off the rose -->
+			<path d="M159 132c18 4 30 20 30 44-22 0-38-16-40-40"/>
+			<path d="M81 132c-18 4-30 20-30 44 22 0 38-16 40-40"/>
+			<path d="M120 160c4 20 0 40-14 56M120 160c-4 20 0 40 14 56"/>
+			<!-- stems + buds reaching to the tile edges (seamless) -->
+			<path d="M120 82C120 54 132 34 120 0M120 0c10 8 16 20 14 36M120 0c-10 8-16 20-14 36"/>
+			<path d="M0 120C28 120 48 108 82 120M0 120c8 10 20 16 36 14M0 120c8-10 20-16 36-14"/>
+			<path d="M240 120c-28 0-48-12-82 0M240 120c-8 10-20 16-36 14M240 120c-8-10-20-16-36-14"/>
+			<path d="M120 158C120 186 108 206 120 240M120 240c10-8 16-20 14-36M120 240c-10-8-16-20-14-36"/>
+			<!-- corner sprigs -->
+			<path d="M0 0c22 6 38 24 42 50M0 0c6 22 24 38 50 42M14 30c14 2 26-6 32-20M30 14c2 14-6 26-20 32"/>
+			<path d="M240 0c-22 6-38 24-42 50M240 0c-6 22-24 38-50 42"/>
+			<path d="M0 240c22-6 38-24 42-50M0 240c6-22 24-38 50-42"/>
+			<path d="M240 240c-22-6-38-24-42-50M240 240c-6-22-24-38-50-42"/>
+		</g>
+	</defs>
+
+	<!-- tone-on-tone faux emboss: light highlight up-left, soft shadow down-right -->
+	<use href="#fe" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2.4" transform="translate(-1.1 -1.1)"/>
+	<use href="#fe" stroke="#2b3a58" stroke-opacity="0.16" stroke-width="2.4" transform="translate(1.3 1.5)"/>
+	<use href="#fe" stroke="#b9c5da" stroke-opacity="0.3" stroke-width="1.4"/>
+</svg>
