@@ -47,10 +47,26 @@
 	// functions
 
 	// muted autoplay is always allowed — the video must never sit paused
-	// waiting on the sound-permission dance below
+	// waiting on the sound-permission dance below. `src` is set here,
+	// imperatively, rather than via a reactive template binding. Calling
+	// play() in the same tick as setting a fresh `src` is a known race —
+	// the element is mid "resource selection" and can silently drop that
+	// play request, leaving the video stuck paused on its poster forever —
+	// so a brand-new source waits for `canplay` before playing.
 	const startVideo = () => {
-		if (media.value)
-			media.value.play().catch(() => {});
+		if (!media.value)
+			return;
+
+		const el = media.value;
+
+		if (props.video && el.getAttribute('src') !== props.video) {
+			el.src = props.video;
+			el.addEventListener('canplay', () => el.play().catch(() => {}), { once: true });
+			el.load();
+			return;
+		}
+
+		el.play().catch(() => {});
 	};
 
 	// browsers refuse unmuted autoplay without a user gesture — clear any
@@ -199,9 +215,8 @@
 				v-if="props.video"
 				ref="media"
 				class="invitation-photo__media"
-				:src="props.load ? props.video : undefined"
 				:poster="props.poster || undefined"
-				:preload="props.load ? 'auto' : 'none'"
+				preload="none"
 				muted
 				loop
 				playsinline
