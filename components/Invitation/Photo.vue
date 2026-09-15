@@ -17,6 +17,13 @@
 			type: String,
 			default: '',
 		},
+		// the hero video is heavy — don't fetch it until the guest has tapped
+		// the envelope, so the very first paint stays fast. The song and the
+		// envelope's own intro video are unaffected by this (loaded eagerly).
+		load: {
+			type: Boolean,
+			default: false,
+		},
 		caption: {
 			type: String,
 			default: '',
@@ -145,16 +152,22 @@
 			runVisualIntro();
 	});
 
-	onMounted(async () => {
-		// playback (and the sound-unlock attempt) starts right away, even
-		// while the envelope is still covering the section — not gated on
-		// `play`, so the music begins the moment the page loads. The video
-		// (silent, muted+loop) and the song (its own element, plays through
-		// to the end without looping) are independent of each other.
-		if (props.video)
+	// the hero video only starts fetching (and playing, muted+loop) once the
+	// guest has tapped the envelope — see the `load` prop above
+	watch(() => props.load, (value) => {
+		if (value)
+			startVideo();
+	});
+
+	onMounted(() => {
+		if (props.video && props.load)
 			startVideo();
 
-		if (props.song && !(await trySound()))
+		// arm the fallback listeners now, but don't attempt to play the song
+		// yet — it should only start off the guest's own tap (see
+		// `unlockSound`, called from the envelope's click handler), never on
+		// its own at page load
+		if (props.song)
 			armUnlock();
 
 		if (props.play)
@@ -163,12 +176,19 @@
 
 	onBeforeUnmount(clearUnlock);
 
-	// called from the envelope's own tap handler — a second, more direct
-	// attempt at unlocking sound, made synchronously inside that same click
-	// (some mobile browsers won't honour a gesture relayed through a later,
+	// called from the envelope's own tap handler — the most direct shot at
+	// unlocking sound, made synchronously inside that same click (some
+	// mobile browsers won't honour a gesture relayed through a later,
 	// unrelated listener)
 	defineExpose({
-		unlockSound: trySound,
+		unlockSound: async () => {
+			const ok = await trySound();
+
+			if (ok)
+				clearUnlock();
+
+			return ok;
+		},
 	});
 </script>
 
@@ -179,12 +199,12 @@
 				v-if="props.video"
 				ref="media"
 				class="invitation-photo__media"
-				:src="props.video"
+				:src="props.load ? props.video : undefined"
 				:poster="props.poster || undefined"
+				:preload="props.load ? 'auto' : 'none'"
 				muted
 				loop
 				playsinline
-				preload="auto"
 			/>
 			<img
 				v-else

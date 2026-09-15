@@ -8,15 +8,19 @@
 	const fireworksActive = ref(false);
 	const fireworks = ref(null);
 	const photo = ref(null);
+	const heroVideoLoad = ref(false); // start fetching the hero video only from here
 
 	const coverPhoto = computed(() => gallery.value[0]);
 
 	// functions
 	const onIntroTap = () => {
 		// the guest's own tap on the envelope — the one real user gesture we
-		// get — used immediately to ask for the hero song's sound, before
-		// any browser decides too much time has passed since the gesture
+		// get. Used immediately to (a) ask for the hero song's sound, before
+		// any browser decides too much time has passed since the gesture,
+		// and (b) start loading the heavy hero video in the background while
+		// the envelope animation still has several seconds left to run.
 		photo.value?.unlockSound?.();
+		heroVideoLoad.value = true;
 	};
 
 	const onIntroOpen = () => {
@@ -103,6 +107,7 @@
 				:video="coverPhoto.video"
 				:poster="coverPhoto.poster"
 				:song="coverPhoto.song"
+				:load="heroVideoLoad"
 				:caption="coverPhoto.caption"
 				:play="introOpen"
 			/>
